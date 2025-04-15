@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: aliceblue;
+}
+#produto-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+}
+.produto{
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px whitesmoke;
+}
+
+.produto .preco{
+    font-weight: bold;
+    color: green; 
+}
