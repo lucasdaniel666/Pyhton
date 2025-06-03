@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acessórios</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+    body {
+      flex: 1;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2b2b2b;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .search-cart {
+      display: flex;
+      align-items: center;
+    }
+    input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .product-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      flex-wrap: nowrap;
+    }
+    .produto {
+      background-color: #333;
+      min-width: 230px;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .produto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .produto h2 {
+      margin-top: 15px;
+    }
+    .produto p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .produto .preco {
+      font-weight: bold;
+      color: #ff5252;
+    }
+    .product-row::-webkit-scrollbar {
+      height: 8px;
+    }
+    .product-row::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: auto;
+    }
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="logo-btn" onclick="window.location.href='homepage.html'">Calle 99</button>
+    <div class="nav-links">
+      <a href="sobrenos.html">Sobre Nós</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+    </div>
+    <div class="search-cart">
+      <input type="text" placeholder="Buscar" />
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Acessórios</h2>
+    <div id="produtos-container" class="product-row"></div>
+  </section>
+
+  <footer>
+    Calle 99 © 2025 | Site desenvolvido por Leal Code
+    <div>Contato: *Número de alguém do grupo*</div>
+    <div><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchProdutos();
+    });
+
+    function fetchProdutos() {
+      fetch("http://localhost:8000/api/produtos/")
+        .then(res => res.json())
+        .then(data => renderProdutos(data))
+        .catch(err => console.error("Erro ao buscar produtos", err));
+    }
+
+    function renderProdutos(produtos) {
+      const container = document.getElementById("produtos-container");
+      container.innerHTML = "";
+
+      const produtosFiltrados = produtos.filter(
+        produto => produto.categoria.nome.toLowerCase().includes("boné")
+      );
+
+      if (produtosFiltrados.length === 0) {
+        container.innerHTML = "<p>Nenhum produto da categoria 'Boné' encontrado.</p>";
+        return;
+      }
+
+      produtosFiltrados.forEach(produto => {
+        const card = document.createElement("div");
+        card.className = "produto";
+        card.innerHTML = `
+          <h2>${produto.nome}</h2>
+          <div class="imagem-container">
+            <img src="${produto.imagem}" alt="${produto.nome}" />
+          </div>
+          <p>${produto.descricao}</p>
+          <p class="preco">R$ ${produto.preco}</p>
+          <p><strong>Categoria:</strong> ${produto.categoria.nome}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

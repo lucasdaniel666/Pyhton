@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre nós</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #2b2929;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .nav-group {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .search-cart input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    .container {
+      background-color: #1f1f1f;
+      padding: 30px;
+      max-width: 800px;
+      margin: 80px auto 50px auto;
+      border-radius: 20px;
+      border: 1px solid #333;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 1px solid #4e4a4a;
+      padding-bottom: 10px;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 16px;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="logo-btn" onclick="window.location.href='homepage.html'">Calle 99</button>
+    <div class="nav-group">
+      <div class="nav-links">
+        <a href="sobrenos.html">Sobre Nós</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html">Carrinho</a>
+      </div>
+    </div>
+    <div class="search-cart">
+      <input type="text" placeholder="Buscar" />
+    </div>
+  </header>
+  <div class="container">
+    <h1>Sobre Nós</h1>
+    <p>
+      A gente nasceu da vontade de expressar atitude, estilo e identidade por meio de roupas que realmente dizem algo. Nossa marca não é só sobre moda, é sobre movimento — um reflexo da rua, da cultura urbana, das referências que a gente consome e vive todos os dias.
+      <br><br>
+      Inspirados pelo Y2K, pelo underground digital e por tudo que pulsa autenticidade, criamos peças que vão além do visual — são mensagens, experiências e liberdade.
+      <br><br>
+      Aqui, cada detalhe importa: do design ousado até o toque de nostalgia e rebeldia. Se você curte sair do comum, causar impacto e vestir o que sente, esse é seu lugar.
+    </p>
+  </div>
+</body>
+</html>

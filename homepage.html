@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Homepage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2b2b2b;
+      padding: 20px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .search-cart {
+      display: flex;
+      align-items: center;
+    }
+    input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .hero {
+      background: url('https://www.bing.com/images/blob?bcid=TgTuTssQzXsIKYDPU3uqZUshJ9qneoZkzWw') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .category-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .category-box {
+      background-color: #333;
+      width: 200px;
+      height: 150px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .category-box:hover {
+      transform: scale(1.05);
+      background-color: #444;
+    }
+    .product-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-card {
+      background-color: #333;
+      width: 230px;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(1.1);
+    }
+    .product-card h3 {
+      margin-top: 15px;
+    }
+    .product-card p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .product-card button {
+      background-color: rgb(185, 0, 0);
+      border: none;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product-card button:hover {
+      background-color: rgb(150, 0, 0);
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 80px;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .search-cart {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="logo-btn" onclick="window.location.href='homepage.html'">Calle 99</button>
+    <div class="nav-links">
+      <a href="sobrenos.html">Sobre Nós</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+    </div>
+    <div class="search-cart">
+      <input type="text" placeholder="Buscar" />
+    </div>
+  </header>
+  <div class="hero">
+    <h1>Vista a rua com atitude.</h1>
+  </div>
+  <section class="section">
+    <h2>Categorias Populares</h2>
+    <div class="category-container">
+      <div class="category-box" onclick="window.location.href='camisetas.html'">Camisetas</div>
+      <div class="category-box" onclick="window.location.href='blusas.html'">Blusas</div>
+      <div class="category-box" onclick="window.location.href='calcas.html'">Calças</div>
+      <div class="category-box" onclick="window.location.href='acessorios.html'">Acessórios</div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Destaques da Semana</h2>
+    <div id="produtos-container" class="product-container"></div>
+  </section>
+  <footer>
+    Calle 99 © 2025 | Site desenvolvido por Leal Code
+    <div>Contato: *Número de alguém do grupo*</div>
+    <div><a href="#" style="color: #aaa;">Política de Privacidade</a> | <a href="#" style="color: #aaa;">Termos de Uso</a></div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchProdutos();
+    });
+
+    function fetchProdutos() {
+      fetch("http://localhost:8000/api/produtos/")
+        .then(res => res.json())
+        .then(data => renderProdutos(data))
+        .catch(err => console.error("Erro ao buscar produtos", err));
+    }
+
+    function renderProdutos(produtos) {
+      const container = document.getElementById("produtos-container");
+      container.innerHTML = "";
+
+      produtos.forEach(produto => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" />
+          <h3>${produto.nome}</h3>
+          <p>${produto.descricao}</p>
+          <p><strong>Categoria:</strong> ${produto.categoria.nome}</p>
+          <p class="preco">R$ ${produto.preco}</p>
+          <button>Ver Produto</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

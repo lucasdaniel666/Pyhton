@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: white;
+    }
+    header {
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    header a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    header a:hover {
+      text-decoration: underline;
+    }
+    .compra-container {
+      display: flex;
+      justify-content: center;
+      margin: 60px auto;
+      max-width: 900px;
+      background-color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      gap: 30px;
+    }
+    .compra-container img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .produto-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .produto-info h2 {
+      margin-bottom: 10px;
+    }
+    .produto-info p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .produto-info select {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+    }
+    .produto-info button {
+      background-color: #d10000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .produto-info button:hover {
+      background-color: #b30000;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="sobre.html">Sobre Nós</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="carrinho.html">Carrinho</a>
+  </header>
+  <div class="compra-container">
+    <img src="img/exemplo.jpg" alt="Produto Exemplo" />
+    <div class="produto-info">
+      <div>
+        <h2>Nome do Produto</h2>
+        <p><strong>Preço:</strong> R$ 00,00</p>
+        <p>Descrição breve do produto escolhido com estilo CALLE99.</p>
+        <select>
+          <option disabled selected>Selecione o tamanho</option>
+          <option>P</option>
+          <option>M</option>
+          <option>G</option>
+          <option>GG</option>
+        </select>
+      </div>
+      <button>Comprar</button>
+    </div>
+  </div>
+  <footer>
+    © 2025 CALLE99. Todos os direitos reservados.
+  </footer>
+</body>
+</html>

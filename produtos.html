@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produtos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2b2b2b;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .search-cart {
+      display: flex;
+      align-items: center;
+    }
+    input[type="text"] {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .product-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      background-color: #333;
+      min-width: 230px;
+      flex: 0 0 auto;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .product-card h3 {
+      margin-top: 15px;
+    }
+    .product-card p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .product-card button {
+      background-color: rgb(185, 0, 0);
+      border: none;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .product-card button:hover {
+      background-color: rgb(150, 0, 0);
+    }
+    .product-row::-webkit-scrollbar {
+      height: 8px;
+    }
+    .product-row::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 80px;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .search-cart {
+        width: 100%;
+        margin-top: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="logo-btn" onclick="window.location.href='homepage.html'">Calle 99</button>
+    <div class="nav-links">
+      <a href="sobrenos.html">Sobre Nós</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="carrinho.html">Carrinho</a>
+    </div>
+    <div class="search-cart">
+      <input type="text" placeholder="Buscar" />
+    </div>
+  </header>
+  <section class="section">
+    <h2>Camisetas</h2>
+    <div class="product-row">
+      <div class="product-card">
+        <img src="https://d1gpzof0viq1mp.cloudfront.net/products/0401202506191567eb5b333cd20.jpg" alt="Camiseta" />
+        <h3>Camiseta Oversized</h3>
+        <p>Estilo urbano, tecido confortável</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+  </section>
+  <section class="section">
+    <h2>Calças</h2>
+    <div class="product-row">
+      <div class="product-card">
+        <img src="https://img.ltwebstatic.com/images3_pi/2024/10/10/07/1728557363e7e0c8594c999fda57a74cf7ba758ce9_thumbnail_560x.webp" alt="Calça" />
+        <h3>Calça Cargo</h3>
+        <p>Bolso lateral e modelagem reta</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+  </section>
+  <section class="section">
+    <h2>Blusas</h2>
+    <div class="product-row">
+      <div class="product-card">
+        <img src="https://img.ltwebstatic.com/images3_pi/2024/10/08/a7/17283677525e19fc85e37e787bd084539e674603fa_thumbnail_405x552.jpg" alt="Moletom" />
+        <h3>Moletom Curto</h3>
+        <p>Estampa urbana, ideal pro frio</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+  </section>
+  <section class="section">
+    <h2>Acessórios</h2>
+    <div class="product-row">
+      <div class="product-card">
+        <img src="https://images.tcdn.com.br/img/img_prod/811036/bone_5_five_panel_chronic_street_tag_3603_variacao_15433_1_13e8388c62c6e59771fb53d11051626e.jpg" alt="Boné" />
+        <h3>Boné Street</h3>
+        <p>Boné aba curva, estilo urbano</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+      <div class="product-card">
+        <h3>Modelo</h3>
+        <p>Só exemplo</p>
+        <button>Ver Produto</button>
+      </div>
+    </div>
+  </section>
+  <footer>
+    Calle 99 © 2025 | Site desenvolvido por Leal Code
+    <div>Contato: *Número de alguém do grupo*</div>
+    <div><a href="#" style="color: #aaa;">Política de Privacidade</a> | <a href="#" style="color: #aaa;">Termos de Uso</a></div>
+  </footer>
+</body>
+</html>
